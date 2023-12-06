@@ -33,6 +33,6 @@ vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
 vim.keymap.set('n', '<leader>fc', builtin.colorscheme, {})
 
 vim.cmd 'colorscheme kanagawa-dragon'
-
+vim.cmd 'tnoremap <Esc> <C-\\><C-n>'
 vim.wo.relativenumber = true
 
