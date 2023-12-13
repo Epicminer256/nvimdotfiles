@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local configpath = vim.fn.stdpath("config")
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -33,6 +34,13 @@ vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
 vim.keymap.set('n', '<leader>fc', builtin.colorscheme, {})
 
 vim.cmd 'colorscheme kanagawa-dragon'
+
 vim.cmd 'tnoremap <Esc> <C-\\><C-n>'
 vim.wo.relativenumber = true
 
+vim.api.nvim_create_autocmd("BufEnter", {command = "lcd %:p:h",})
+
+vim.o.expandtab = true
+vim.o.smartindent = true
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
